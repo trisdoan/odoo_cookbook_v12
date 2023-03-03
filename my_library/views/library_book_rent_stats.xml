@@ -1,0 +1,24 @@
+<odoo>
+    <record id="library_book_rent_stats_action" model="ir.actions.act_window">
+        <field name="name">Dashboard</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">library.book.rent.stats</field>
+        <field name="view_mode">pivot</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="library_book_rent_stats_menu" name="Dashboard" parent="library_base_menu"
+              action="library_book_rent_stats_action"/>
+
+    <record id="library_book_rent_stats_view_pivot" model="ir.ui.view">
+        <field name="name">library_book_rent_stats_view_pivot</field>
+        <field name="model">library.book.rent.stats</field>
+        <field name="arch" type="xml">
+            <pivot string="Dashboard">
+                <field name="book_id" />
+                <field name="rent_count"/>
+                <field name="avg_occupation"/>
+            </pivot>
+        </field>
+    </record>
+</odoo>
